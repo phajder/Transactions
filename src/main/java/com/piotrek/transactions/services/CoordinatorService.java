@@ -13,6 +13,10 @@ import javax.ws.rs.core.Response;
 @Path("/coordinator")
 public class CoordinatorService {
 
+    /**
+     * Method provided for testing
+     * @return HttpResponse Just a simple plain text
+     */
     @GET
     @Path("/hello")
     public Response sayHello() {
