@@ -9,7 +9,6 @@ import java.net.UnknownHostException;
  * @author Piotrek
  */
 public class Participant {
-
     private String ipAddress; /**< Machine IP address */
     private State state; /**< Current state of machine */
 

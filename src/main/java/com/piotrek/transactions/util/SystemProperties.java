@@ -14,6 +14,7 @@ import java.util.Properties;
  */
 public class SystemProperties {
     //public static final String ROLE = "role";
+    public static final String DEFAULT_PORT = "port";
     public static final String COHORT_IP = "cohort_ip";
     //public static final String IP = "ip";
     //public static final String COORDINATOR_IP = "coordinator_ip";

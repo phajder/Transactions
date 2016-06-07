@@ -34,10 +34,6 @@ public class Coordinator {
         client = new RestClientImpl();
     }
 
-    public void startVoting() {
-
-    }
-
     /**
      * Collect votes from cohorts. Required to perform global commit.
      */
