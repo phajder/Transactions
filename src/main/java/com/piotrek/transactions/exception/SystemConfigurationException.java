@@ -16,6 +16,7 @@ public class SystemConfigurationException extends RuntimeException {
 
     /**
      * Constructs a SystemConfigurationException with the given detail message.
+     *
      * @param message The detail message of the DAOConfigurationException.
      */
     public SystemConfigurationException(String message) {
@@ -24,6 +25,7 @@ public class SystemConfigurationException extends RuntimeException {
 
     /**
      * Constructs a SystemConfigurationExceptionn with the given root cause.
+     *
      * @param cause The root cause of the SystemConfigurationException.
      */
     public SystemConfigurationException(Throwable cause) {
@@ -32,8 +34,9 @@ public class SystemConfigurationException extends RuntimeException {
 
     /**
      * Constructs a SystemConfigurationException with the given detail message and root cause.
+     *
      * @param message The detail message of the SystemConfigurationException.
-     * @param cause The root cause of the SystemConfigurationException.
+     * @param cause   The root cause of the SystemConfigurationException.
      */
     public SystemConfigurationException(String message, Throwable cause) {
         super(message, cause);

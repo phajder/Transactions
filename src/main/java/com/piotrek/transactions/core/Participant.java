@@ -9,11 +9,26 @@ import java.net.UnknownHostException;
  * @author Piotrek
  */
 public class Participant {
-    private String ipAddress; /**< Machine IP address */
-    private State state; /**< Current state of machine */
 
+    /**
+     * Machine IP address.
+     * Required for communication between coordinator and cohort.
+     */
+    private String ipAddress;
+
+    /**
+     * Current state of machine.
+     * In general determines global state of system.
+     */
+    private State state;
+
+    /**
+     * Participant of transaction constructor.
+     *
+     * @param ipAddress cohorts IP address
+     */
     public Participant(String ipAddress) {
-        if(ipAddress != null) {
+        if (ipAddress != null) {
             this.ipAddress = ipAddress;
         } else {
             try {
@@ -27,24 +42,21 @@ public class Participant {
     }
 
     /**
-     * Getter
-     * @return String machine IP address
+     * {@link Participant#ipAddress}
      */
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * Setter
-     * @param state new state
+     * {@link Participant#state}
      */
     public void setState(State state) {
         this.state = state;
     }
 
     /**
-     * Getter
-     * @return state of machine
+     * {@link Participant#state}
      */
     public State getState() {
         return state;

@@ -26,7 +26,7 @@ public class CohortService {
     public static final String GLOBAL_STATE = "/global";
 
     /**
-     * Method provided for testing
+     * Method provided for testing.
      *
      * @return HttpResponse Just a simple plain text
      */
@@ -53,7 +53,7 @@ public class CohortService {
 
     /**
      * Provides global state application.
-     * If global state is GLOBAL_COMMIT - persists changes
+     * If global state is GLOBAL_COMMIT - persists changes.
      *
      * @param state global state of system
      * @return HttpResponse
@@ -73,7 +73,7 @@ public class CohortService {
     }
 
     /**
-     * Action to do on every cohort
+     * Action to do on every cohort.
      *
      * @return false only when random returns 0, because you cannot divide by 0
      * @throws IOException
@@ -106,7 +106,7 @@ public class CohortService {
     }
 
     /**
-     * Reads double value from a given as param file
+     * Reads double value from a given as param file.
      *
      * @param filename File to be read
      * @return value saved in file
@@ -133,7 +133,7 @@ public class CohortService {
     }
 
     /**
-     * Overwrites global file with value from temporary file
+     * Overwrites global file with value from temporary file.
      *
      * @throws IOException
      */

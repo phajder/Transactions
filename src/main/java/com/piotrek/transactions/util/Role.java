@@ -2,6 +2,7 @@ package com.piotrek.transactions.util;
 
 /**
  * Used to define machine role
+ *
  * @author Piotrek
  */
 public enum Role {

@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 
 /**
- * Implementation of REST client in this application case
+ * Implementation of REST client in this application case.
  *
  * @author Piotrek
  */
@@ -21,7 +21,7 @@ public class RestClientImpl implements RestClient {
     private static final String DEFAULT_PORT = SystemProperties.getProperty(SystemProperties.DEFAULT_PORT, true);
 
     /**
-     * Retrieves certain machine state
+     * Retrieves certain machine state.
      *
      * @param ip machine IP address
      * @return machine state
@@ -41,7 +41,7 @@ public class RestClientImpl implements RestClient {
     }
 
     /**
-     * Distributes global states between machines
+     * Distributes global states between machines.
      *
      * @param ip    machine IP address
      * @param state global state of system
@@ -53,7 +53,7 @@ public class RestClientImpl implements RestClient {
         form.add("state", state.toString());
         ClientResponse response = resource.type(MediaType.APPLICATION_FORM_URLENCODED_TYPE)
                 .post(ClientResponse.class, form);
-        if(response.getStatus() != 200) {
+        if (response.getStatus() != 200) {
             System.out.println("Some errors found!");
         } else {
             System.out.println("Global status persisted on all machines!");
@@ -62,7 +62,8 @@ public class RestClientImpl implements RestClient {
 
     /**
      * This method creates WebResource object. Just for not copying this fragment of code for no reason. :D
-     * @param ip IP address of cohort
+     *
+     * @param ip     IP address of cohort
      * @param action Service action represented as String vale
      * @return WebResource object
      */

@@ -9,14 +9,25 @@ import java.util.List;
 
 /**
  * Objective representation for Coordinator.
- * Holds all required data to perform commit (or rollback) action
+ * Holds all required data to perform commit (or rollback) action.
  *
  * @author Piotrek
  */
 public class Coordinator {
-    private Participant[] participants; /**< All participants */
-    private State globalState; /**< Global state of all machines */
-    private RestClient client; /**< Used for communication with cohorts */
+    /**
+     * All participants defined in system.
+     */
+    private Participant[] participants;
+
+    /**
+     * Global state of system.
+     */
+    private State globalState;
+
+    /**
+     * REST client, used to communicate with cohorts
+     */
+    private RestClient client;
 
     /**
      * Initializes array of participants, their IPs and holds their state in local memory.
@@ -25,9 +36,9 @@ public class Coordinator {
         List<Participant> list = new ArrayList<>();
         String ipAddress;
         int counter = 1;
-        while(true) {
+        while (true) {
             ipAddress = SystemProperties.getProperty(SystemProperties.COHORT_IP + counter++, false);
-            if(ipAddress == null) break;
+            if (ipAddress == null) break;
             list.add(new Participant(ipAddress));
         }
         participants = list.toArray(new Participant[list.size()]);
@@ -50,8 +61,8 @@ public class Coordinator {
      */
     public void processVoting() {
         for (Participant participant : participants) {
-            if(participant.getState() != State.COMMIT)
-                globalState =  State.ROLLBACK;
+            if (participant.getState() != State.COMMIT)
+                globalState = State.ROLLBACK;
         }
         globalState = State.COMMIT;
     }
@@ -67,8 +78,7 @@ public class Coordinator {
     }
 
     /**
-     * Getter
-     * @return global state of system
+     * {@link Coordinator#globalState}
      */
     public State getGlobalState() {
         return globalState;

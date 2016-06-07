@@ -5,7 +5,8 @@ import com.piotrek.transactions.core.Coordinator;
 import java.io.*;
 
 /**
- * Main class for testing
+ * Main class for testing.
+ *
  * @author Piotrek
  */
 public class Main {
@@ -17,6 +18,6 @@ public class Main {
         coordinator.sendGlobalState();
         long time = System.currentTimeMillis() - start;
         System.out.println(coordinator.getGlobalState());
-        System.out.println("Time: " + time%1000);
+        System.out.println("Time: " + time % 1000);
     }
 }

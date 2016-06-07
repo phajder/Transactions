@@ -25,7 +25,7 @@ public class SystemProperties {
     static {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         InputStream propertiesFile = classLoader.getResourceAsStream(PROPERTIES_PATH);
-        if(propertiesFile == null) {
+        if (propertiesFile == null) {
             throw new SystemConfigurationException("Properties file '" + PROPERTIES_PATH + "' is missing in classpath.");
         }
 
@@ -39,7 +39,8 @@ public class SystemProperties {
     /**
      * Returns the SystemProperties instance specific property value associated with the given key with
      * the option to indicate whether the property is mandatory or not.
-     * @param key The key to be associated with a SystemProperties instance specific value.
+     *
+     * @param key       The key to be associated with a SystemProperties instance specific value.
      * @param mandatory Sets whether the returned property value should not be null nor empty.
      * @return The SystemProperties instance specific property value associated with the given key.
      */

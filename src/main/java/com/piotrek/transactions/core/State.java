@@ -14,8 +14,8 @@ public enum State {
     }
 
     public static State getByName(String name) {
-        for(State state: values()) {
-            if(state.name.equals(name))
+        for (State state : values()) {
+            if (state.name.equals(name))
                 return state;
         }
         return null;

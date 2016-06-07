@@ -5,13 +5,17 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
 /**
- * Simple class for testing
+ * Simple class for testing.
  *
  * @author Piotrek
  */
 @Path("/")
 public class HelloWorldService {
 
+    /**
+     * Simple Hello World plain text.
+     * @return HttpResponse
+     */
     @GET
     @Path("/hello")
     public Response getHelloWorldMessage() {
