@@ -6,5 +6,5 @@ package com.piotrek.transactions.core;
  * @author Piotrek
  */
 public enum State {
-    READY, COMMIT, ROLLBACK
+    STARTING, READY, COMMIT, ROLLBACK
 }

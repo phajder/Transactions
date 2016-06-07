@@ -13,6 +13,11 @@ import java.util.Properties;
  * @author Piotrek
  */
 public class SystemProperties {
+    //public static final String ROLE = "role";
+    public static final String COHORT_IP = "cohort_ip";
+    //public static final String IP = "ip";
+    //public static final String COORDINATOR_IP = "coordinator_ip";
+
     private static final String PROPERTIES_PATH = "system.properties";
     private static final Properties PROPERTIES = new Properties();
 

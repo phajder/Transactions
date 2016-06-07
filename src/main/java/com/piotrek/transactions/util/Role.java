@@ -16,4 +16,9 @@ public enum Role {
     public boolean compare(String role) {
         return this.name.equals(role);
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

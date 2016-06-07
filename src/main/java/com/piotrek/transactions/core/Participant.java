@@ -1,23 +1,30 @@
 package com.piotrek.transactions.core;
 
-import java.util.Random;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * Abstract model of transaction participant.
  *
  * @author Piotrek
  */
-public abstract class Participant {
-    private String ipAddress; /**< Machine IP address */
-    private Random random = new Random(); /**< Random generator provided to show rollback in transactions */
-    protected State state; /**< Current state of machine */
-    protected static Participant[] participants; /**< All participants */
+public class Participant {
 
-    /**
-     * Any action machine can do
-     */
-    protected void doAction() {
-        //TODO: implement any action, for example adding two digits
+    private String ipAddress; /**< Machine IP address */
+    private State state; /**< Current state of machine */
+
+    public Participant(String ipAddress) {
+        if(ipAddress != null) {
+            this.ipAddress = ipAddress;
+        } else {
+            try {
+                this.ipAddress = InetAddress.getLocalHost().getHostAddress();
+            } catch (UnknownHostException e) {
+                System.err.println("Unknown host exception thrown.");
+                System.exit(1);
+
+            }
+        }
     }
 
     /**
@@ -34,5 +41,13 @@ public abstract class Participant {
      */
     public void setState(State state) {
         this.state = state;
+    }
+
+    /**
+     * Getter
+     * @return state of machine
+     */
+    public State getState() {
+        return state;
     }
 }
