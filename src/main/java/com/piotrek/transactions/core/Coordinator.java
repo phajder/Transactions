@@ -75,6 +75,7 @@ public class Coordinator {
         for (Participant participant : participants) {
             client.sendGlobalState(participant.getIpAddress(), globalState);
         }
+        System.out.println("Global status persisted on all machines!");
     }
 
     /**

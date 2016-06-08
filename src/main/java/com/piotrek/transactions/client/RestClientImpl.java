@@ -55,8 +55,6 @@ public class RestClientImpl implements RestClient {
                 .post(ClientResponse.class, form);
         if (response.getStatus() != 200) {
             System.out.println("Some errors found!");
-        } else {
-            System.out.println("Global status persisted on all machines!");
         }
     }
 
@@ -68,7 +66,7 @@ public class RestClientImpl implements RestClient {
      * @return WebResource object
      */
     private WebResource getWebResource(String ip, String action) {
-        String url = "http://" + ip + ":" + DEFAULT_PORT + "/rest/" + Role.COHORT + action;
+        String url = "http://" + ip + ":" + DEFAULT_PORT + "/Transactions/rest/" + Role.COHORT + action;
         Client client = new Client();
         return client.resource(url);
     }
